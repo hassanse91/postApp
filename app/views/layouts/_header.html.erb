@@ -15,7 +15,7 @@
               <%= link_to "Sign in", new_user_session_path, class: "btn btn-success" %>
             <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default" %>
             <% else %>
-           <%= link_to "New Pic", new_pic_path, class: "btn btn-success" %>
+           <%= link_to "New post", new_post_path, class: "btn btn-success" %>
           <%= link_to "Account", edit_user_registration_path, class: "btn btn-default" %>
             <%= link_to "deconnection", destroy_user_session_path, class: "btn btn-default" %>
             <% end %>
