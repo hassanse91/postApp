@@ -5,11 +5,9 @@
 <div class="col-xs-6 col-md-3">
 <div class="thumbnail">
   <%= link_to ( image_tag post.image.url(:medium), class: 'image'), post %>
-
 <div class="caption">
-  <p> <strong> Ttile :</strong> <%= post.title %></p>
-  <p><strong>  Content: </strong> <%= post.content %> </p>
-  <p> <strong> Created at :</strong> <%= time_ago_in_words(post.created_at) %></p>
+  
+  <p><strong>  Content: </strong> <%= truncate post.content, length: 50 %> </p>
   <p> <%= link_to 'show post', post, class: "btn btn-default" %> </p>
 </div>
 </div>

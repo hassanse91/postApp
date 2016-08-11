@@ -1,33 +1,37 @@
 
 <div class="row">
-<div class="col-xs-6 col-sm-4">
-<% if @post.comments.count == 0 %>
-	<div class="thumbnail">
-	<p> there is <%= @post.comments.count %> Comments</p>
-		<p>there is no comment yet, add comment to let uys know your openion</p>
-	</div>
-<% else %>
-		<strong> There is <%= @post.comments.count %> Comments</strong>	
-		<p> <%= render :partial => @post.comments %></p>
-<% end %>
-</div>
-		<div class="col-xs-6 col-sm-4">
+		
+
+
+		<div class="col-md-9 col-md-push-3">
 	
 			<h1> <%= @post.title %></h1> 
 			<div class="image">
-		<p><%= link_to ( image_tag @post.image.url(:medium)), @post.image.url(:original), :popup=>['original_image', 'height=700,width=900'] %> </p>
+		<p><%= link_to ( image_tag @post.image.url()), @post.image.url(:original), :popup=>['original_image', 'height=700,width=900'] %> </p>
 			</div>
-			<strong>Content: </strong> 
-			<p> <%= @post.content %></p> 
-			<%= link_to 'Home', root_path, class: "btn btn-default" %>
-			<% if @post.user == current_user %>
-				<%= link_to 'edit', edit_post_path(@post), class: "btn btn-default" %>
-				<%= link_to	'destroy', @post, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-default" %>
-			<% end %>
-	
-		
+			<div class="thumbnail">
+				<p> <%= @post.content %></p> 
+			</div>
 
-		
+			<div class="buttons">
+				<%= link_to 'Home', root_path, class: "btn btn-default" %>
+				<% if @post.user == current_user %>
+					<%= link_to 'edit', edit_post_path(@post), class: "btn btn-default" %>
+					<%= link_to	'destroy', @post, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-default", style: "{ float: right;}" %>
+				<% end %>
+			</div>
+
+			<div class="comments">
+					<% if @post.comments.count == 0 %>
+				<div class="thumbnail">
+					<strong> there is <%= @post.comments.count %> Comments</strong>
+					<p>there is no comment yet, add comment to let uys know your openion</p>
+				</div>
+				<% else %>
+						<h2> There is <%= @post.comments.count %> Comments</h2>	
+						<p> <%= render :partial => @post.comments %></p>
+				<% end %>
+			</div>
 			<h2>Add a comment:</h2>
 				<%= form_for([@post, @post.comments.build]) do |f| %>
 				  <div class="field">
@@ -38,9 +42,9 @@
 				    <%= f.submit %>
 				  </div>
 				<% end %>
-		
 		</div>
-		<div class="col-xs-6 col-sm-4">
+
+		<div class="col-md-3 col-md-pull-9">
 		<h2>Others posts</h2>
 		<div class="row">
 		<% @posts.each do |post| %>
@@ -50,9 +54,10 @@
 			</div>
 		<% end %>
 			</div>
-			
-
 
 		</div>
+
+		
+
 </div>
 

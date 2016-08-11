@@ -11,6 +11,9 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= image_tag  @post.image.url(:medium) %>
+  </div>
 <div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
