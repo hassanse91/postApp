@@ -31,8 +31,8 @@
 			<h2>Add a comment:</h2>
 				<%= form_for([@post, @post.comments.build]) do |f| %>
 				  <div class="field">
-				    <%= f.label :body %><br />
-				    <%= f.text_area :body, class: "form-control" %>
+				    <%= f.label :content %><br />
+				    <%= f.text_area :content, class: "form-control" %>
 				  </div>
 				  <div class="actions">
 				    <%= f.submit %>
