@@ -1,15 +1,15 @@
 <%= div_for(comment) do %>
-		<p><strong><%= comment.body %></strong></p>	
+		<p><strong><%= comment.content %></strong></p>	
 	<small>
 	Submitted 
 	<strong>
 	 <%= time_ago_in_words(comment.created_at) %> ago
 	</strong> by 
-	<%= comment.user.UserName %>
+	<%= comment.user.name %>
 	</small>
 		
 			<% if comment.user == current_user %>
-				<%= link_to 'Destroy', [@pic, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+				<%= link_to 'Destroy', [@post, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
 			<% end %>
 			<hr>
 		
