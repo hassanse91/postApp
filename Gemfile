@@ -16,7 +16,7 @@ gem 'devise'
 gem "paperclip", "~> 5.0.0"
 gem 'devise-bootstrap-views'
 gem "wysiwyg-rails"
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '< 2.0'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
