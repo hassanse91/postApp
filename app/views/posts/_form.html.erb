@@ -24,11 +24,17 @@
   </div>
   <div class="field">
     <%= f.label :content %><br>
-    <%= f.text_area :content, class: "form-control"  %>
+    <%= f.text_area :content, id: "wysiwyg", class: "form-control"  %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
+<script>  
+    $('#wysiwyg').froalaEditor({
+      inlineMode: false,
+      heightMin: '200px',
+      toolBarButtons: ['bold', 'italic', 'underline'],
+    })
+</script>
 </div>
