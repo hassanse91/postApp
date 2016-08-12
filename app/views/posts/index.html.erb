@@ -6,8 +6,7 @@
 <div class="thumbnail">
   <%= link_to ( image_tag post.image.url(:medium), class: 'image'), post %>
 <div class="caption">
-  
-  <p><strong>  Content: </strong> <%= truncate post.content, length: 50 %> </p>
+  <p><strong>  Title: </strong> <%= post.title %> </p>
   <p> <%= link_to 'show post', post, class: "btn btn-default" %> </p>
 </div>
 </div>
